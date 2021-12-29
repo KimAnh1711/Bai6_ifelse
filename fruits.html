@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Giá hoa quả</title>
+</head>
+<body>
+    <input type="text" name="fruitname" id="fruitname">     
+    <button type="button" onclick="showMessage();">Xem giá</button>
+    <p id="show"></p>
+</body>
+
+
+</html>
+
+<script>
+    function showMessage() {
+        
+        //  Ổi '20000VND/kg';
+        //  Dưa Hấu = '20000VND/kg';
+        //  Táo = '30000VND/kg';        
+        //  Xoài = '30000VND/kg';
+        //  Cam = '40000VND/kg';
+        //  Chôm Chôm = '40000VND/kg';
+        //  Măng Cụt = '50000VND/kg';
+        var giatri = document.getElementById('fruitname').value;
+        switch(giatri){
+            case 'Ổi': 
+                document.getElementById('show').innerText = "20000VND/kg";
+                break;
+            case 'Dưa Hấu': 
+                document.getElementById('show').innerText = "20000VND/kg";
+                break;
+            case 'Táo': 
+                document.getElementById('show').innerText = "30000VND/kg";
+                break;
+            case 'Xoài': 
+                document.getElementById('show').innerText = "30000VND/kg";
+                break;
+            case 'Cam': 
+                document.getElementById('show').innerText = "40000VND/kg";
+                break;
+            case 'Chôm Chôm': 
+                document.getElementById('show').innerText = "40000VND/kg";
+                break;
+            case 'Măng Cụt': 
+                document.getElementById('show').innerText = "50000VND/kg";
+                break;  
+        }
+    }
+</script>
