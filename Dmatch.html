@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính điểm ĐH khối D</title>
+    <style>
+        .title {
+            font-size: 20px;
+        }
+        .label {
+           display: inline-block;
+           width: 100px;
+           padding-bottom: 10px;
+        }
+        .score {
+            display: inline-block;
+            width: 200px;
+            padding-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="title"><b>Tính điểm ĐH khối D</b></p>
+    </div>
+    <div class="select">
+        <span class="label">Môn Toán</span><input type="text" name="Match" id="Match"><br>
+        <span class="label">Môn Văn</span><input type="text" name="Literature" id="Literature"><br>
+        <span class="label">Môn Anh</span><input type="text" name="English" id="English"><br>
+        <span class="label">Khu vực</span>
+                <select id="KV">
+                    <option value="kv1">KV1</option>
+                    <option value="kv2">KV2</option>
+                    <option value="kv2_nt">KV2-NT</option>
+                    <option value="kv3">KV3</option>
+                </select><br>
+        <div>
+            <span class="score"><input type="button" name="score" value="Tính điểm" onclick="showMessage()" id="score"></span>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Tổng điểm = Điểm môn Toán + Điểm môn Văn + Điểm môn Anh + điểm khu vực, trong đó điểm khu vực được tính như sau:
+
+KV1: cộng 0.75 điểm
+KV2-NT: cộng 0.5 điểm
+KV2: cộng 0.25 điểm
+KV3: không cộng điểm  -->
+<script>
+    function showMessage() {
+        var giatri1 = document.getElementById("Match").value;
+        var giatri2 = document.getElementById("Literature").value;
+        var giatri3 = document.getElementById("English").value;
+        var giatri4 = document.getElementById("KV").value;
+        result = parseFloat(giatri1) + parseFloat(giatri2) + parseFloat(giatri3);
+        switch(giatri4) {
+            case "kv1":
+                alert(result + 0.75);
+                break;
+            case "kv2":
+                alert(result + 0.25);
+                break;
+            case "kv2_nt":
+                alert(result + 0.5);
+                break;
+            case "kv3":
+                alert(result);
+                break;
+        }
+    }
+</script>
